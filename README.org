@@ -1,0 +1,10 @@
+* PyCharm-Redis
+#+BEGIN_SRC sh
+$ docker build --no-cache --build-arg PYTHON_VERSION=3.7-slim --build-arg REDIS_VERSION=6.0.1 --build-arg PYCHARM_VERSION=2020.1 --file Dockerfile . --tag image-name:latest
+#+END_SRC
+#+BEGIN_SRC sh
+$ xhost +local:docker
+#+END_SRC
+#+BEGIN_SRC sh
+$ docker run -it --volume /tmp/.X11-unix:/tmp/.X11-unix --env DISPLAY=unix$DISPLAY --name container-name image-id
+#+END_SRC
